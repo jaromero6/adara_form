@@ -16,14 +16,12 @@ function createUser(req, res) {
         region,
         commune,
         shoeSize } = req.body;
-    console.log(req.body);
     // Validamos que todos los campos no sean nulos
     if (!mail && !password && !firstName &&
         !lastName && !gender && !birthday &&
         !region && !commune && !shoeSize) 
     {
         res.status(422);
-        console.log(1);
         res.send('Error: Parameters cannot be null');
         return;
     }
@@ -33,20 +31,17 @@ function createUser(req, res) {
     );
     if (!validMail) {
         res.status(422);
-        console.log(2);
         res.send('Mail: Not valid mail provided');
         return;
     }
     if (password.length < 8) {
         res.status(422);
-        console.log(3);
         res.send('Password: Too short password provided');
         return;
     }
     // Se valida fecha de nacimiento
     if (!dateIsValid (new Date(birthday))) {
         res.status(422);
-        console.log(4);
         res.send('Birthday: Invalid date');
         return;
     }
@@ -54,7 +49,6 @@ function createUser(req, res) {
     if (gender === maleGender) {
         if (!menShoeSize.has(shoeSize)) {
             res.status(422);
-            console.log(5);
             res.send('ShoeSize: Not valid size');
             return;
         }
