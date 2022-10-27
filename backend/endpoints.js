@@ -66,7 +66,7 @@ function createUser(req, res) {
 
     // Por nuestra actual implementacion, se usa al mail como llave para que sea mas facil
     // obtenerlo en get user
-    User[mail] = {password,
+    User[mail] = {password, // En un caso real se guardaria encriptada
                  firstName,
                  lastName,
                  gender,
@@ -81,7 +81,15 @@ function createUser(req, res) {
 
 
 function getUser(req, res) {
-    res.send('Por implementar');
+    const { mail } = req.params;
+    if (!mail || !User[mail]) {
+        res.status(404);
+        res.send('User not found');
+    }
+    // Se evita mandar la constraseña
+    const {password, ...userFound } = User[mail];
+
+    res.json(userFound);
 }
 
 

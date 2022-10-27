@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Se definen los endpoints
-app.get('/user', (req, res) => {
+app.get('/user/:mail', (req, res) => {
   getUser(req, res);
 });
 
