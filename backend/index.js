@@ -1,7 +1,10 @@
 
 // Se importa express para levantar el servidor
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
+
 
 const { getUser, createUser } = require('./endpoints');
 
@@ -16,7 +19,7 @@ app.get('/user/:mail', (req, res) => {
   getUser(req, res);
 });
 
-app.post('/user',(req, res) => {
+app.post('/user', (req, res) => {
     createUser(req, res);
 } )
 
