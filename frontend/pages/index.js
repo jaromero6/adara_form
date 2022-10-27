@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import RegisterForm from '../components/RegisterForm';
+import GetUser from '../components/GetUser';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,10 +16,7 @@ export default function Home() {
 
       <main className={styles.main}>
           <RegisterForm />
-        <div className={styles.searchUserContainer}>
-            <h1>Busca un usuario de Adara</h1>
-        </div>
-
+          <GetUser />
 
       </main>
 

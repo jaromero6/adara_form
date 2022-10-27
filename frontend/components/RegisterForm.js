@@ -123,7 +123,6 @@ export default function RegisterForm() {
             <label>Fecha de nacimiento</label>
             <DatePicker selected={birthday} onChange=
               {(date) => setBirthday(date)} />
-            <input type="text" value={mail} onChange={setMail} placeholder="ejemplo@ejemplo.com" />
             <label>Region</label>
             <select value={region} onChange={handleRegion}>
                 {
@@ -153,7 +152,6 @@ export default function RegisterForm() {
                     })
                 }
             </select>
-            <input type="text" value={mail} onChange={setMail} placeholder="ejemplo@ejemplo.com" />
             {!!error && <div>{error}</div>}
             {(!isLoading)? <button onClick={submit}>Unirse</button> : <div>Cargando ...</div>}
             {isSuccess && <div>Usuario agregado correctamente</div>}

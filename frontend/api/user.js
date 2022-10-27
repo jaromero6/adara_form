@@ -28,4 +28,14 @@ export const addUser = async ({mail,
           },
         });
       return res;
-  }
+};
+
+export const getUser = async ({mail}) => {
+    const res = await fetch(url + '/' + mail, {
+        method: 'GET'
+    });
+    const parsedResponse = await res.json();
+    return parsedResponse;
+}
+
+
