@@ -42,11 +42,19 @@ export default function RegisterForm() {
     setCommune(regions[e.target.value][0]);
   };
 
+  const handleGender = (e) => {
+      if (e.target.value === 'M') {
+        setShowSize(Object.values(menShoeSize)[0]);
+    } else {
+        setShowSize(Object.values(womenShoeSize)[0]);
+    }
+    setGender(e.target.value);
+  }
+
   const handleMail = handleChangeState(setMail);
   const handlePassword = handleChangeState(setPassword);
   const handleFirstName = handleChangeState(setFirstName);
   const handleLastName = handleChangeState(setLastName);
-  const handleGender = handleChangeState(setGender);
   const handleCommune = handleChangeState(setCommune);
   const handleShoeSize = handleChangeState(setShowSize);
 
