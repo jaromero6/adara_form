@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import {isError, useMutation} from 'react-query';
+import { useMutation } from 'react-query';
 import DatePicker from "react-datepicker";
+import'react-datepicker/dist/react-datepicker.css'
 
 import regions from '../utils/regions.json';
 import {menShoeSize, womenShoeSize} from '../utils/shoeSize';
@@ -18,9 +19,9 @@ export default function RegisterForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [gender, setGender] = useState('M');
-  const [birthday, setBirthday] = useState('');
+  const [birthday, setBirthday] = useState(new Date());
   const [region, setRegion] = useState(allRegions[0]);
-  const [commune, setCommune] = useState(allRegions[0][0]);
+  const [commune, setCommune] = useState(regions[allRegions[0]][0]);
   const [shoeSize, setShowSize] = useState('');
 
   const [error, setError] = useState('');
@@ -108,62 +109,91 @@ export default function RegisterForm() {
 
   return (
         <div className={styles.formContainer}>
-            <h1>¡Inscríbite en Adara Styling!</h1>
-            <label>Mail</label>
-            <input type="text" value={mail} onChange={handleMail} placeholder="ejemplo@ejemplo.com" />
+            <h1 className={styles.title}>¡Inscríbite en Adara Styling!</h1>
 
-            <label>Contraseña</label>
-            <input type="password" value={password} onChange={handlePassword} placeholder="12345678" />
-
-
-            <label>Nombre</label>
-            <input type="text" value={firstName} onChange={handleFirstName} placeholder="Nombre" />
-
-            <label>Apellido</label>
-            <input type="text" value={lastName} onChange={handleLastName} placeholder="Apellido" />
-
-            <label>Género</label>
-            <select value={gender} onChange={handleGender}>
-                <option key={"g1"} value="M">Masculino</option>
-                <option key={"g2"} value="F">Femenino</option>
-            </select>
-
-            <label>Fecha de nacimiento</label>
-            <DatePicker selected={birthday} onChange=
-              {(date) => setBirthday(date)} />
-            <label>Region</label>
-            <select value={region} onChange={handleRegion}>
-                {
-                    Object.keys(regions).map((reg, id) => {
-                        return <option key={"r" + id} value={reg}>{reg}</option>
-                    })
-                }
-
-            </select>
-            <label>Comuna</label>
-           <select value={commune} onChange={handleCommune}>
-                {
-                    regions[region].map((com, id) => {
-                        return <option key={"c"+ id} value={com}>{com}</option>
-                    })
-                }
-
-           </select>
-
-            <label>Talla de calzado</label>
-            <select value={shoeSize} onChange={handleShoeSize}>
-                {
-                    gender === 'M' ? Object.keys(menShoeSize).map((size, id) => {
-                        return <option key={"s" + id} value={menShoeSize[size]}>{size} </option>
-                    }) : Object.keys(womenShoeSize).map((size, id) => {
-                        return <option key={"s" + id} value={womenShoeSize[size]}>{size}</option>
-                    })
-                }
-            </select>
-            {!!error && <div>{error}</div>}
-            {(!isLoading)? <button onClick={submit}>Unirse</button> : <div>Cargando ...</div>}
-            {isSuccess && <div>Usuario agregado correctamente</div>}
+            <div className={styles.row}>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Mail</div>
+                <input type="text" className={styles.inputStyle} value={mail} onChange={handleMail} placeholder="ejemplo@ejemplo.com" />
+              </div>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Contraseña</div>
+                <input type="password" className={styles.inputStyle} value={password} onChange={handlePassword} placeholder="12345678" />
+              </div>
             </div>
+
+
+            <div className={styles.row}>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Nombre</div>
+                <input type="text" className={styles.inputStyle} value={firstName} onChange={handleFirstName} placeholder="Nombre" />
+              </div>
+
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Apellido</div>
+                <input type="text" className={styles.inputStyle} value={lastName} onChange={handleLastName} placeholder="Apellido" />
+              </div>
+            </div>
+
+            <div className={styles.row}>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Género</div>
+                <select className={styles.inputStyle} value={gender} onChange={handleGender}>
+                    <option key={"g1"} value="M">Masculino</option>
+                    <option key={"g2"} value="F">Femenino</option>
+                </select>
+              </div>
+
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Talla de calzado</div>
+                <select className={styles.inputStyle} value={shoeSize} onChange={handleShoeSize}>
+                    {
+                        gender === 'M' ? Object.keys(menShoeSize).map((size, id) => {
+                            return <option key={"s" + id} value={menShoeSize[size]}>{size} </option>
+                        }) : Object.keys(womenShoeSize).map((size, id) => {
+                            return <option key={"s" + id} value={womenShoeSize[size]}>{size}</option>
+                        })
+                    }
+                </select>
+              </div>
+            </div>
+
+            <div className={styles.label}>Fecha de nacimiento</div>
+            <DatePicker className={styles.inputStyle} selected={birthday} onChange=
+              {(date) => setBirthday(date)} />
+
+            <div className={styles.row}>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Region</div>
+                <select className={styles.inputStyle} value={region} onChange={handleRegion}>
+                    {
+                        Object.keys(regions).map((reg, id) => {
+                            return <option key={"r" + id} value={reg}>{reg}</option>
+                        })
+                    }
+
+                </select>
+              </div>
+              <div className={styles.dataSection}>
+                <div className={styles.label}>Comuna</div>
+                  <select className={styles.inputStyle} value={commune} onChange={handleCommune}>
+                    {
+                        regions[region].map((com, id) => {
+                            return <option key={"c"+ id} value={com}>{com}</option>
+                        })
+                    }
+
+                  </select>
+                </div>
+            </div>
+
+            <div className={styles.endSection}>
+              {!!error && <div>{error}</div>}
+              {(!isLoading)? <button className={styles.submitButton} onClick={submit}>Unirse</button> : <div>Cargando ...</div>}
+              {isSuccess && <div>Usuario agregado correctamente</div>}
+
+            </div>
+          </div>
 
   )
 }

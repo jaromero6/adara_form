@@ -1,0 +1,61 @@
+.formContainer {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 16px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: 3.3px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dataSection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: 3.3px;
+}
+
+.inputStyle {
+    background-color: white;
+    color: black;
+    height: 36px;
+    border: 0px;
+    border-bottom: 1px solid #8c2c23;
+    padding-bottom: 0px;
+}
+
+
+
+.endSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.submitButton {
+    background-color: #8c2c23;
+    color: #fff;
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    border: 0px;
+    border-radius: 8px;
+}
