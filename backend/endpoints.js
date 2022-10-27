@@ -32,30 +32,36 @@ function createUser(req, res) {
     if (!validMail) {
         res.status(422);
         res.send('Mail: Not valid mail provided');
+        return;
     }
     if (password.length < 8) {
         res.status(422);
         res.send('Password: Too short password provided');
+        return;
     }
     // Se valida fecha de nacimiento
     if (!dateIsValid (new Date(birthday))) {
         res.status(422);
-        res.send('Birthday: Invalid date')
+        res.send('Birthday: Invalid date');
+        return;
     }
     // Se valida genero y talla de zapato
     if (gender === maleGender) {
         if (!menShoeSize.has(shoeSize)) {
             res.status(422);
             res.send('ShoeSize: Not valid size');
+            return;
         }
     } else if (gender === femaleGender) {
         if (!womenShoeSize.has(shoeSize)) {
             res.status(422);
             res.send('ShoeSize: Not valid size');
+            return;
         }
     } else {
         res.status(422);
-        res.send('Gender: Not correct gender format provided')
+        res.send('Gender: Not correct gender format provided');
+        return;
     }
     /*
     Se validan los datos mas importantes de momento, queda por validar region y comuna,
@@ -85,9 +91,11 @@ function getUser(req, res) {
     if (!mail || !User[mail]) {
         res.status(404);
         res.send('User not found');
+        return;
     }
     // Se evita mandar la constraseña
     const {password, ...userFound } = User[mail];
+    userFound['mail'] = mail;
 
     res.json(userFound);
 }
