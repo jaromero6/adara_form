@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 
 import RegisterForm from '../components/RegisterForm';
 import GetUser from '../components/GetUser';
