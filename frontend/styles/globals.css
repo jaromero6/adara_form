@@ -21,7 +21,7 @@ a {
   }
   body {
     color: black;
-    background: white;
+    background: #eae5da;
     font-family: "Roboto",sans-serif;
   }
 }
@@ -32,10 +32,11 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 3.3px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 input, select {
-    background-color: white;
+    background-color: transparent;
     color: black;
     height: 36px;
     border: 0px;

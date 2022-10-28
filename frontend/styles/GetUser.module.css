@@ -1,9 +1,16 @@
+.container {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 32px;
+}
+
+
 .dataContainer {
     margin-top: 32px;
-    background-color: #fff;
     border: 1px solid #8c2c23;
-    border-radius: 8px;
     padding: 8px;
+    border-radius: 4px;
 }
 
 .searchSection {

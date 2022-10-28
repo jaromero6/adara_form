@@ -12,6 +12,7 @@ import styles from '../styles/FormContainer.module.css';
 
 const allRegions = Object.keys(regions);
 
+
 export default function RegisterForm() {
   // State vars
   const [mail, setMail] = useState('');

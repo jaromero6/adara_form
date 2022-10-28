@@ -11,11 +11,16 @@
   flex: 1;
 }
 
+.logo {
+    width: 360px;
+    height: 80px;
+}
+
 
 .content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
+    margin-top: 16px;
 }
-

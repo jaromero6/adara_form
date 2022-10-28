@@ -15,26 +15,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-            <h1>Adara Styling</h1>
+            <img src="https://www.adarastyling.com/static/media/adaramenu.88c2b2bc.svg" className={styles.logo}/>
             <div className={styles.content}>
                 <RegisterForm />
                 <GetUser />
             </div>
 
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
