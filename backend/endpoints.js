@@ -65,6 +65,11 @@ function createUser(req, res) {
 
     // Por nuestra actual implementacion, se usa al mail como llave para que sea mas facil
     // obtenerlo en get user
+    // Se chequea que no exista
+    if (User[mail]) {
+        res.status(409);
+        return res.send('User already exists');
+    }
     User[mail] = {password, // En un caso real se guardaria encriptada
                  firstName,
                  lastName,
@@ -83,7 +88,6 @@ function getUser(req, res) {
     const { mail } = req.params;
     if (!mail || !User[mail]) {
         res.status(404);
-        res.send('User not found');
         return res.json(null);
     }
     // Se evita mandar la constraseña
