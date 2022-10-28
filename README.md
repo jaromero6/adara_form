@@ -19,7 +19,9 @@ El backend está desarrollado en Express. No usé una base de datos ni Docker, p
 El frontend está desarrollado en Next. Consta de una sola vista, al lado izquierdo el formulario y al derecho un buscador de usuarios. En el formulario se manejan errores de input,
 sin embargo no se manejan de manera total errores que vengan desde el servidor, la aplicación no se cae, pero no se muestra el error, lo que mejoraría la experiencia de usuario. Tampoco se maneja el reseteo del formulario al momento de añadir un usuario correctamente, del mismo modo en el buscador no se muestra ningún mensaje cuando el mail buscado no se encuentra.
 
-Los colores e imágenes las saqué de la página actual de Adara Styling
+Los colores e imágenes las saqué de la página actual de Adara Styling.
+
+Por último, considero que sería buena idea implementar un commit lint para poder atajar commits que no cumplan con el formato adecuado o tengan errores y/o código que no sigue las prácticas acordadas para el desarrollo
 
 # Preguntas
 
