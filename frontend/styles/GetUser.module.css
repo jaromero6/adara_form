@@ -1,0 +1,90 @@
+.dataContainer {
+    margin-top: 32px;
+    background-color: #fff;
+    border: 1px solid #8c2c23;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.searchSection {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    align-items: flex-end;
+}
+
+.searchButton {
+    background-color: #8c2c23;
+    color: white;
+    display: flex;
+    height: 30px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+.searchIcon {
+    color: #8c2c23;
+}
+
+.dataContainer h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8c2c23;
+    text-align: center;
+}
+
+.dataContainer h2 {
+    text-align: center;
+    color: #8c2c23;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section .label {
+    font-weight: bold;
+}
+
+.section .data {
+    color: #8c2c23;
+    font-weight: lighter;
+}
+
+.ubicationSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ubicationSection .ubication {
+    color: #8c2c23;
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+}
+
+.ubicationSection .data {
+    color: #8c2c23;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+

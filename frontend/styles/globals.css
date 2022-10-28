@@ -25,3 +25,26 @@ a {
     font-family: "Roboto",sans-serif;
   }
 }
+
+h1 {
+    font-size: 24px;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: 3.3px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    background-color: white;
+    color: black;
+    height: 36px;
+    border: 0px;
+    border-bottom: 1px solid #8c2c23;
+    padding-bottom: 0px;
+}
+
+input:focus {
+    outline: none;
+}
+
+

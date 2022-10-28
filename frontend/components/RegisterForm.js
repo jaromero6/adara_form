@@ -109,7 +109,7 @@ export default function RegisterForm() {
 
   return (
         <div className={styles.formContainer}>
-            <h1 className={styles.title}>¡Inscríbite en Adara Styling!</h1>
+            <h1>¡Inscríbite en Adara Styling!</h1>
 
             <div className={styles.row}>
               <div className={styles.dataSection}>

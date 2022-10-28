@@ -15,8 +15,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-          <RegisterForm />
-          <GetUser />
+            <h1>Adara Styling</h1>
+            <div className={styles.content}>
+                <RegisterForm />
+                <GetUser />
+            </div>
 
       </main>
 

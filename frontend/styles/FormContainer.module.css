@@ -2,15 +2,7 @@
     background: #fff;
     border-radius: 8px;
     border: 1px solid black;
-    padding: 16px;
-}
-
-.title {
-    font-size: 24px;
-    font-weight: 400 !important;
-    text-transform: uppercase;
-    letter-spacing: 3.3px;
-    margin-bottom: 20px;
+    padding: 32px;
 }
 
 .row {
@@ -30,15 +22,6 @@
     font-weight: 400 !important;
     text-transform: uppercase;
     letter-spacing: 3.3px;
-}
-
-.inputStyle {
-    background-color: white;
-    color: black;
-    height: 36px;
-    border: 0px;
-    border-bottom: 1px solid #8c2c23;
-    padding-bottom: 0px;
 }
 
 
